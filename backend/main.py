@@ -36,7 +36,7 @@ def delete_appliance(appliance_id: int):
 
 @app.post("/appliances/{appliance_id}/state")
 def set_state(appliance_id: int, p: ApplianceStateUpdate):
-    action = lm.turn_on if p.action == 'on' else lm.turn.off
+    action = lm.turn_on if p.action == 'on' else lm.turn_off
     return run(action, appliance_id)
 
 @app.get("/events")

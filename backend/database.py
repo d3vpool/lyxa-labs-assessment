@@ -37,7 +37,7 @@ def get_db():
 
     try:
         yield conn
-        conn.commit
+        conn.commit()
     except Exception:
         conn.rollback()
         raise
